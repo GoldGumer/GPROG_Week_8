@@ -17,8 +17,8 @@ public class PlayerControls : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetAxisRaw("Horizontal") != 0f || Input.GetAxisRaw("Vertical") != 0f) timeManager.SlowDownTime();
-        else if (Mathf.Abs(Input.GetAxisRaw("Horizontal")) != 1f || Mathf.Abs(Input.GetAxisRaw("Vertical")) != 1f) timeManager.SpeedUpTime();
+        if (Input.GetAxisRaw("Horizontal") != 0f || Input.GetAxisRaw("Vertical") != 0f) timeManager.SpeedUpTime();
+        else if (Mathf.Abs(Input.GetAxisRaw("Horizontal")) != 1f || Mathf.Abs(Input.GetAxisRaw("Vertical")) != 1f) timeManager.SlowDownTime();
         transform.position += (Vector3.forward * Input.GetAxisRaw("Vertical") + Vector3.right * Input.GetAxisRaw("Horizontal")) * movementSpeed;
     }
 }
